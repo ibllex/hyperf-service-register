@@ -1,2 +1,3 @@
 # hyperf-service-register
-hyperf service registration component
+
+Service registration component for hyperf

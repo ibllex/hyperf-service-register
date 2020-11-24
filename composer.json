@@ -1,0 +1,23 @@
+{
+    "name": "ibllex/hyperf-service-register",
+    "description": "Service registration component for hyperf",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "iBllex\\ServiceRegister\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "iBllexTest\\ServiceRegister\\": "tests/"
+        }
+    }
+}
