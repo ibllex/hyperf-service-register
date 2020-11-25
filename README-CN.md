@@ -62,8 +62,6 @@ return [
 
 ```
 
-The publish option requires at least two fields, `protocol` and `name`. You can also specify the `id` field, which is generated automatically if not specified.
-
 `publish` 选项必须至少包含 `protocol` 和 `name` 字段，你也可以指定 `id` 字段，如果没有指定 `id` 的话我们会自动生成。
 
 **需要注意的是如果你的服务使用 `grpc` 协议，你必须手动添加健康检查路由：**
