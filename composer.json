@@ -5,9 +5,15 @@
     "license": "MIT",
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.2",
+        "hyperf/consul": "~2.0.0",
+        "hyperf/http-server": "~2.0.0",
+        "hyperf/contract": "~2.0.0"
     },
     "require-dev": {
+        "google/protobuf": "^3.6.1",
+        "hyperf/event": "~2.0.0",
+        "hyperf/framework": "^2.0",
         "phpunit/phpunit": "^7.0.0"
     },
     "autoload": {
@@ -19,5 +25,13 @@
         "psr-4": {
             "iBllexTest\\ServiceRegister\\": "tests/"
         }
+    },
+    "extra": {
+        "hyperf": {
+            "config": "iBllex\\ServiceRegister\\ConfigProvider"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always tests"
     }
 }
