@@ -1,22 +1,22 @@
-English | [中文](./README-CN.md)
+[English](./README.md) | 中文
 
 # hyperf-service-register
 
-This is a service registry component of [hyperf](https://github.com/hyperf/hyperf) that currently supports publishing services of the grpc, http, jsonrpc-http and jsonrpc protocol to consul.
+这是一个 [hyperf](https://github.com/hyperf/hyperf) 的服务注册库，目前支持将 grpc, http, jsonrpc-http 和 jsonrpc 协议的服务发布到 consul。
 
-We will support more service center in the future, like etcd, and you can also do it yourself and open a pull request, it's not difficult.
+我们今后可能会支持更多的服务中心，例如 `etcd`，你也可以自己实现并提交 PR，添加新的服务中心支持并不难。
 
-## Quick usage
+## 快速使用
 
-#### 1. Install
+#### 1. 安装
 
 ```shell
 composer require ibllex/hyperf-service-register
 ```
 
-#### 2. Configure the services to publish
+#### 2. 配置需要发布的服务
 
-Edit `config/autoload/server.php` and add the `publish` option to the service you want to publish. just like this
+编辑 `config/autoload/server.php` 并在想要发布的服务配置选项中添加 `publish` 选项，例如：
 
 ```php
 <?php
@@ -64,16 +64,18 @@ return [
 
 The publish option requires at least two fields, `protocol` and `name`. You can also specify the `id` field, which is generated automatically if not specified.
 
-**You must be aware that if your service is using the `grpc` protocol, you must manually add a health check route to the service.**
+`publish` 选项必须至少包含 `protocol` 和 `name` 字段，你也可以指定 `id` 字段，如果没有指定 `id` 的话我们会自动生成。
 
-Edit your `config/routes.php` and add
+**需要注意的是如果你的服务使用 `grpc` 协议，你必须手动添加健康检查路由：**
+
+编辑 `config/routes.php` 并添加：
 
 ```php
-// You need to replace the 'grpc' parameter with your own grpc service name.
+// 请将 'grpc' 参数替换为你自己的 grpc 服务名称
 \iBllex\ServiceRegister\Grpc\Grpc::addHealthCheck('grpc');
 ```
 
-#### 3. That's all.
+#### 3. 就酱
 
 ## License
 
